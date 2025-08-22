@@ -79,16 +79,23 @@
   .mobile-search.active {
     display: block;
   }
-  .hamburger {
-  flex: 0 0 auto; /* don’t grow or shrink */
-  margin-left: auto; /* stick to right */
-  position : fixed;
-   }
+  .navbar-toggler {
+  position: relative; /* keeps it in place */
+  z-index: 1050; /* above the dropdown so it’s clickable */
+}
+/* The container for the collapsed menu */
+#mobileNav {
+  position: absolute; /* overlays under the navbar */
+  top: 100%; /* just below the navbar */
+  left: 0;
+  width: 100%;
+  z-index: 1040;
+}
 </style>
 
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-  <div class="container-fluid">
+  <div class="container-fluid position-relative">
     <!-- Mobile Navbar (hamburger + dropdown) -->
     <a class="navbar-brand d-md-none" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle= collapse data-bs-target="#mobileNav">

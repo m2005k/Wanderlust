@@ -51,13 +51,29 @@
     .dropdown-menu-mobile .dropdown-item:hover {
       background-color: #f8f9fa;
     }
+    /* Floating search button (FAB) */
+  .search-fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fe424d;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1100;
+  }
+  .search-fab i {
+    font-size: 1.2rem;
+  }
 </style>
 
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNavAltMarkup">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -76,12 +92,27 @@
             <% } %>
           </ul>
         </div>
-        <div class="navbar-nav ms-auto">
+        <!-- <div class="navbar-nav ms-auto">
           <form class="d-flex" role="search">
             <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
             <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
           </form>
-        </div>
+        </div> -->
+         <!-- Desktop search -->
+      <form class="d-flex ms-3 search-form" role="search">
+        <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
+        <button class="btn search-btn" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<!-- Floating search button (only mobile) -->
+<button class="search-fab">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
       </div>
     </div>
   </nav> 

@@ -18,45 +18,63 @@
     border-radius: 25px;
     padding: 0.5rem 2rem 0.5rem 2rem;
   }
+  /* Mobile dropdown */
   @media (max-width: 768px) {
-  .dropdown-menu-mobile {
-    position: absolute;
-    top: 60px; /* just below navbar */
-    right: 10px;
-    width: 60%;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    padding: 0.5rem 0;
-    z-index: 1000;
+    .dropdown-menu-mobile {
+      position: absolute;
+      top: 60px; /* below navbar */
+      right: 10px;
+      width: 220px; /* smaller, precise width */
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 0.5rem 0;
+      z-index: 1000;
+    }
   }
-  .dropdown-menu-mobile .dropdown-item {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-  }
-}
+    .dropdown-menu-mobile ul {
+      list-style: none; /* remove dots */
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown-menu-mobile li {
+      padding: 0;
+      margin: 0;
+    }
+    .dropdown-menu-mobile .dropdown-item {
+      display: block;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #333;
+    }
+    .dropdown-menu-mobile .dropdown-item:hover {
+      background-color: #f8f9fa;
+    }
 </style>
 
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="navbarNavAltMarkup">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+
+        <!-- Mobile dropdown -->
         <div class="navbar-nav dropdown-menu-mobile">
-        <ul>
-        <li><a class="nav-link explore dropdown-item" href="/listings">Explore</a></li> 
-        <% if (!currUser) { %>
-          <li><a class="dropdown-item" href="/signup">Sign up</a></li>
-          <li><a class="dropdown-item" href="/login">Log in</a></li>
-          <li><a class="dropdown-item" href="/listings/new">Airbnb your home</a></li>
-        <% } else { %>
-          <li><a class="dropdown-item" href="/listings/new">Airbnb your home</a></li>
-          <li><a class="dropdown-item text-danger" href="/logout">Log out</a></li>
-        <% } %>
-      </ul>
+          <ul>
+            <li><a class="dropdown-item" href="/listings">Explore</a></li>
+            <% if (!currUser) { %>
+              <li><a class="dropdown-item" href="/signup">Sign up</a></li>
+              <li><a class="dropdown-item" href="/login">Log in</a></li>
+              <li><a class="dropdown-item" href="/listings/new">Airbnb your home</a></li>
+            <% } else { %>
+              <li><a class="dropdown-item" href="/listings/new">Airbnb your home</a></li>
+              <li><a class="dropdown-item text-danger" href="/logout">Log out</a></li>
+            <% } %>
+          </ul>
         </div>
         <div class="navbar-nav ms-auto">
           <form class="d-flex" role="search">

@@ -19,7 +19,7 @@
     padding: 0.5rem 2rem 0.5rem 2rem;
   }
   .explore{
-    margin-left: 3.5rem;
+    margin-left: 5rem;
   }
   /* Mobile dropdown */
   @media (max-width: 768px) {
@@ -86,7 +86,7 @@
   <div class="container-fluid">
     <!-- Mobile Navbar (hamburger + dropdown) -->
     <a class="navbar-brand d-md-none" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
-    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
+    <button class="navbar-toggler d-md-none" type="button" data-bs-target="#mobileNav">
       <span class="navbar-toggler-icon "></span>
     </button>
     <div class="collapse d-md-none" id="mobileNav">
@@ -120,7 +120,7 @@
       </div>
 
       <!-- Center -->
-      <form class="d-flex" role="search" style="width: 40%;">
+      <form class="d-flex" role="search" style="width: 30%;">
         <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
         <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
       </form>
@@ -140,7 +140,7 @@
   </div>
 </nav>
 
-<div class="mobile-search d-md-none px-3 mt-2" id="mobileSearch">
+<div class="mobile-search d-md-none px-3 mt-2" id="searchFab">
   <form class="d-flex" role="search">
     <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
     <button class="btn search-btn" type="submit">

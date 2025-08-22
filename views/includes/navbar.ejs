@@ -63,9 +63,18 @@
     padding: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     z-index: 1100;
+    cursor: pointer;
   }
   .search-fab i {
     font-size: 1.2rem;
+  }.mobile-search {
+    display: none;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  .mobile-search.active {
+    display: block;
   }
 </style>
 
@@ -79,7 +88,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
 
         <!-- Mobile dropdown -->
-        <div class="navbar-nav dropdown-menu-mobile">
+        <div class="navbar-nav dropdown-menu-mobile d-md-none">
           <ul>
             <li><a class="dropdown-item" href="/listings">Explore</a></li>
             <% if (!currUser) { %>
@@ -99,20 +108,40 @@
           </form>
         </div> -->
          <!-- Desktop search -->
-      <form class="d-flex ms-3 search-form" role="search">
-        <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
-        <button class="btn search-btn" type="submit">
-          <i class="fa-solid fa-magnifying-glass"></i>Search
-        </button>
-      </form>
+         <form class="d-flex ms-3 search-form d-none d-md-flex" role="search">
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
+          <button class="btn search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  
+  <!-- Collapsible mobile search -->
+<div class="mobile-search d-md-none px-3 mt-2" id="mobileSearch">
+  <form class="d-flex" role="search">
+    <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
+    <button class="btn search-btn" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>Search
+    </button>
+  </form>
+</div>
 
-<!-- Floating search button (only mobile) -->
-<button class="search-fab">
+<!-- Floating Search FAB -->
+<button class="search-fab d-md-none" id="searchFab">
   <i class="fa-solid fa-magnifying-glass"></i>
 </button>
+
+<script>
+  const searchFab = document.getElementById("searchFab");
+  const mobileSearch = document.getElementById("mobileSearch");
+
+  searchFab.addEventListener("click", () => {
+    mobileSearch.classList.toggle("active");
+  });
+</script>
+
       </div>
     </div>
   </nav> 

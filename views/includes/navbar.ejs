@@ -79,6 +79,10 @@
   .mobile-search.active {
     display: block;
   }
+  .hamburger {
+  flex: 0 0 auto; /* don’t grow or shrink */
+  margin-left: auto; /* stick to right */
+   }
 </style>
 
 
@@ -86,13 +90,14 @@
   <div class="container-fluid">
     <!-- Mobile Navbar (hamburger + dropdown) -->
     <a class="navbar-brand d-md-none" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
+    <a class="dropdown-item" href="/listings">Explore</a>
     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle= collapse data-bs-target="#mobileNav">
-      <span class="navbar-toggler-icon "></span>
+      <span class="navbar-toggler-icon hamburger"></span>
     </button>
     <div class="collapse d-md-none" id="mobileNav">
       <div class="navbar-nav dropdown-menu-mobile">
         <ul>
-          <li><a class="dropdown-item" href="/listings">Explore</a></li>
+          <!-- <li><a class="dropdown-item" href="/listings">Explore</a></li> -->
           <% if (!currUser) { %>
             <li><a class="dropdown-item" href="/signup">Sign up</a></li>
             <li><a class="dropdown-item" href="/login">Log in</a></li>
@@ -103,20 +108,7 @@
           <% } %>
         </ul>
       </div>
-      <!-- <div class="mobile-search mt-2 px-3" id="mobileSearch">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
-          <button class="btn search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-        </form>
-      </div> -->
-      <!-- <div class="mobile-search d-md-none px-3 mt-2" id="mobileSearch">
-        <form class="d-flex justify-content-center" role="search">
-          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" style="width: 90%;" />
-          <button class="btn search-btn" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-      </div>   -->
+      
     </div>
 
     <!-- Desktop Navbar -->

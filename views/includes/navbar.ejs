@@ -19,7 +19,7 @@
     padding: 0.5rem 2rem 0.5rem 2rem;
   }
   .explore{
-    margin-left: 2.5rem;
+    margin-left: 3.5rem;
   }
   /* Mobile dropdown */
   @media (max-width: 768px) {
@@ -87,7 +87,7 @@
     <!-- Mobile Navbar (hamburger + dropdown) -->
     <a class="navbar-brand d-md-none" href="/listings"><i class="fa-brands fa-airbnb">airbnb</i></a>
     <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav">
-      <span class="navbar-toggler-icon w-100"></span>
+      <span class="navbar-toggler-icon "></span>
     </button>
     <div class="collapse d-md-none" id="mobileNav">
       <div class="navbar-nav dropdown-menu-mobile">
@@ -139,6 +139,15 @@
     </div>
   </div>
 </nav>
+
+<div class="mobile-search d-md-none px-3 mt-2" id="mobileSearch">
+  <form class="d-flex" role="search">
+    <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations" />
+    <button class="btn search-btn" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>Search
+    </button>
+  </form>
+  </div>  
 
 <!-- Floating search FAB for mobile -->
 <button class="search-fab d-md-none" id="searchFab"><i class="fa-solid fa-magnifying-glass"></i></button>
